@@ -8,7 +8,7 @@ Initialisieren eines neuen Git Repository’s
 
 Prüft den Zustand aller Projektdateien
 
-```json
+```
 git status // Gibt den Zustand aller Dateien zurück
 git status -s // Kompaktere Auflistung
 ```
@@ -17,7 +17,7 @@ git status -s // Kompaktere Auflistung
 
 Fügt Dateien zum Staging hinzu, welche für den nächsten Commit vorgesehen werden.
 
-```json
+```
 git add <Datei> // Setzt eine einzelne Datei auf Staging
 git add . // Setzt den aktuellen Zustand aller Dateien auf Staging
 
@@ -28,7 +28,7 @@ git add --patch <Datei> // Einzelne Hunks auswählen
 
 Erstellt eine neue Version aus den Dateien welche sich im Staging befinden
 
-```json
+```
 git commit -m "Nachricht" // Erstellt eine neue Version aus den Dateien im Staging
 git commit -am "Nachricht" // Überspringt Staging, Neue Dateien werden ignoriert
 ```
@@ -39,7 +39,7 @@ git commit -am "Nachricht" // Überspringt Staging, Neue Dateien werden ignorier
 
 Zeigt die letzten Commits an
 
-```json
+```
 git log // Zeigt die letzten Commits an
 git log -n 3 // Zeigt die letzten 3
 git log --graph // Commits mit Graphen
@@ -52,7 +52,7 @@ git reflog // Zeigt alle Referenzen an
 
 Zeigt alle Unterschiede an zwischen Workspace und Lokales Repository
 
-```json
+```
 git diff // Unterschiede anzeigen lassen
 git diff --staged // Für Dateien im Staging
 ```
@@ -63,7 +63,7 @@ git diff --staged // Für Dateien im Staging
 
 Änderungen einer/mehreren Dateien und Commits Rückgängig machen
 
-```json
+```
 git reset // Holt alle Dateien aus Staging und behält alle Änderungen
 git reset <Datei> // gleiches, nur auf angegebene Datei
 ```
@@ -72,7 +72,7 @@ git reset <Datei> // gleiches, nur auf angegebene Datei
 
 Änderungen einer Datei Rückgängig machen
 
-```json
+```
 git restore --staged <Datei> // Holt eine Datei aus Staging und behält alle Änderungen.
 git restore <Datei> // Setzt alle Änderungen einer Datei zurück
 
@@ -81,7 +81,7 @@ git restore --staged --patch <Datei> // Einzelne Hunks auswählen
 
 ## Letzte Commit-Message ändern
 
-```json
+```
 git commit --amend
 // Anschließend öffnet sich dein normaler Editor und
 // du kannst eine neue Commit-Message eingeben
@@ -89,7 +89,7 @@ git commit --amend
 
 ## Eine Änderung dem letzten Commit hinzufügen
 
-```json
+```
 // Mach deine Änderung
 git add . // oder füge einzelne Dateien hinzu
 git commit --amend --no-edit
@@ -101,7 +101,7 @@ git commit --amend --no-edit
 
 ## Letzten Commit Rückgängig machen
 
-```json
+```
 git reset --soft HEAD~ // Macht den letzten Commit rückgängig, --> Staging
 git reset HEAD~ // letzter Commit Rückgangig, --> Workspace
 git reset --mixed HEAD~ // gleiches wie zuvor
@@ -110,7 +110,7 @@ git reset --hard HEAD~ // Löscht alle Änderungen des letzten Commits
 
 ## Älteren Commit Rückgängig machen
 
-```json
+```
 // Finde den betreffenden Commit
 git log
 // Verwende die Pfeiltasten um in der History zu scrollen
@@ -123,7 +123,7 @@ git revert [betreffender hash]
 
 ## Änderungen einer einzelnen Datei Rückgängig machen
 
-```json
+```
 // Finde den Hash eines Commits vor deinen Änderungen
 git log
 // Verwende die Pfeiltasten um in der History zu scrollen
@@ -137,7 +137,7 @@ git commit -m "Änderungen an Datei XY Rückgängig gemacht"
 
 Damit kannst du Dateien zurückholen, die du gelöscht hast, oder Dinge rückgängig machen, die dein Repo zerstört haben, oder einen nicht geglückten Merge oder einfach zu einem Stand zurückkehren, als bestimmte Dinge noch funktioniert haben
 
-```json
+```
 git reflog
 // Du siehst eine Liste mit allem, was du in
 // git getan hast, in allen Branches.
@@ -154,7 +154,7 @@ git reset HEAD@{index}
 
 Anzeigen, Erstellen und Löschen von Branches
 
-```json
+```
 git branch <Name> // Erstellt einen neuen Branch
 git branch -l // Listet alle Branches auf
 git branch -d <Name> // Branch löschen
@@ -164,7 +164,7 @@ git branch -d <Name> // Branch löschen
 
 Erstellen und switchen von Branches
 
-```json
+```
 git checkout -b <Name> // Erstellen eines neuen Branches
 git checkout <Name> // Wechseln in den angegeben Branch
 ```
@@ -173,14 +173,14 @@ git checkout <Name> // Wechseln in den angegeben Branch
 
 Führt mehrere Entwicklungsstände zusammen
 
-```json
+```
 git merge <Branch> // Merged angegeben Branch in den aktuellen hinein
 
 ```
 
 ## Ausversehen auf den master commited
 
-```json
+```
 // Erstelle einen neuen Branch mit dem Stand des master
 git branch neuer-branch-name
 // Entferne den letzten Commit vom master
@@ -192,7 +192,7 @@ git checkout neuer-branch-name
 
 ## Im falschen Branch commited
 
-```json
+```
 // Mach den letzten Commit rückgängig, aber erhalte die
 // Änderungen
 git reset HEAD~ --soft
@@ -205,7 +205,7 @@ git commit -m "Deine Nachricht hier"
 // Jetzt sind die Änderungen auf dem richtigen Branch
 ```
 
-```json
+```
 git checkout name-des-richtigen-branch
 // Wähle den letzten Commit vom master
 git cherry-pick master
@@ -220,7 +220,7 @@ git reset HEAD~ --hard
 
 Mit Remote-Repositories arbeiten.
 
-```json
+```
 git remote add origin <URL> // fügt den remote origin hinzu
 git remote // zeigt den aktuellen remote origin
 git remote get-url origin // zeigt die Remote URL
@@ -234,7 +234,7 @@ git remote remove <name> // entfernt den remote origin
 
 Ein Remote-Repository lokal klonen/herunterladen. Gesamte git history von jeder Datei des Projektes wird heruntergeladen - .git Ordner initialisiert. Die aktuellste Arbeitskopie wird automatisch ausgecheckt. Somit kann auch ein Projekt welches Online beschädigt wird wiederhergestellt werden.
 
-```json
+```
 git clone <url> // klont das Remote-Repository
 git clone <url> <verzeichnis> // Name des Projektverzeichnisses bestimmen
 git clone <url> ./ // aktuelles Vereichnis verwenden
@@ -244,7 +244,7 @@ git remote -v // Schauen was drin steht nach dem klonen
 
 ## git push
 
-```json
+```
 git push // push mit default Werten
 git push -u origin // pushed das lokale Repository ins remote. -u ist der upstream
 ```
@@ -253,7 +253,7 @@ git push -u origin // pushed das lokale Repository ins remote. -u ist der upstre
 
 Holt den Stand aus dem Online Repository
 
-```json
+```
 git fetch origin // Stand holen
 
 git merge origin/master // merged den lokalen Stand mit dem neuen Stand
@@ -264,7 +264,7 @@ git rebase origin/master // Falls lokal Commits vorhanden sind
 
 Holt den Online-Stand und merged ihn automatisch mit dem lokalen Stand
 
-```json
+```
 git pull origin // Holt den Online Stand
 git pull origin <Branch> // Holt einen bestimmten Online Branch
 ```
