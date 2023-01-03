@@ -1,5 +1,9 @@
 # Git in der Shell // Befehle und Workflow
 
+Git Tutorial Deutsch in der Shell. Grundlegende Anwendung der Git Befehle und Workflows um verschiedene Schritte wieder Rückgängig zu machen oder Konflikte zu beheben. Happy Coding!
+
+[![Tutorial bei Youtube](http://img.youtube.com/vi/v1ibwg3zaQQ/0.jpg)](https://youtu.be/v1ibwg3zaQQ)
+
 ## git init
 
 Initialisieren eines neuen Git Repository’s
